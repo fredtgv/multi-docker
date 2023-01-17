@@ -10,7 +10,7 @@ services:
 
   api:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       # Context refer location of Dockerfile.dev file.
       context: ./server
     volumes:
@@ -27,7 +27,7 @@ services:
   
   client:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./client
     volumes:
       - /home/node/app/node_modules
@@ -37,7 +37,7 @@ services:
     
   worker:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./worker
     volumes:
       - /home/node/app/node_modules
@@ -52,7 +52,7 @@ services:
     #   - client
     restart: always
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./nginx
     ports:
       - '3050:80'
