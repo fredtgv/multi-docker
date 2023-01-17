@@ -47,6 +47,9 @@ services:
       - REDIS_PORT=6379
   
   nginx:
+    depends_on:
+      - api
+      - client
     restart: always
     build:
       dockerfile: Dockerfile.dev
